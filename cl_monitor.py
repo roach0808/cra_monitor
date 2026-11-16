@@ -24,6 +24,8 @@ DEFAULTS = {
     "category": "rrr",          # search code (resumes)
     "post_category": "res",     # code in each post's address
     "areas": "all",
+    "posted_today_only": True,  # adds postedToday=1 to every search, like the craigslist.org checkbox
+    "max_post_age_hours": 24,   # ignore posts older than this (0 = no limit)
     "delay_between_requests_seconds": [3, 8],
     "long_break_every_requests": [40, 70],
     "long_break_seconds": [30, 90],

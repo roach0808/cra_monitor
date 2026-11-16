@@ -27,6 +27,15 @@ button{margin-top:12px;width:100%;padding:10px;border:0;border-radius:9px;backgr
 <button>Sign in</button>__ERROR__</form></body></html>"""
 
 
+def min_posted(hours):
+    """Dashboard "Posted" filter: hours -> earliest allowed post time (0 = any time)."""
+    try:
+        h = float(hours or 0)
+    except (TypeError, ValueError):
+        return 0
+    return int(time.time() - h * 3600) if h > 0 else 0
+
+
 def make_handler(cfg, store, scanner, page_path):
     password = cfg.get("password") or ""
     token = hmac.new(store.secret().encode(), password.encode(), hashlib.sha256).hexdigest()
@@ -86,7 +95,7 @@ def make_handler(cfg, store, scanner, page_path):
                     "now": time.time(),
                     "keywords": cfg["keywords"],
                     "cities": len(scanner.areas),
-                    "counts": store.counts(),
+                    "counts": store.counts(min_posted(q.get("age"))),
                     "max_id": store.max_id(),
                     "alerts": store.alerts_after(after) if after else [],
                     "per_day": store.per_day(14),
@@ -102,7 +111,8 @@ def make_handler(cfg, store, scanner, page_path):
                 except ValueError:
                     return self.send(400, {"error": "bad paging"})
                 items, total = store.list(q.get("view", "unread"), q.get("q", "").strip(),
-                                          q.get("state", ""), q.get("sort", "found"), limit, offset)
+                                          q.get("state", ""), q.get("sort", "found"), limit, offset,
+                                          min_posted(q.get("age")))
                 return self.send(200, {"items": items, "total": total})
 
             self.send(404, {"error": "not found"})
@@ -140,7 +150,8 @@ def make_handler(cfg, store, scanner, page_path):
                 return self.send(200 if ok else 404, {"ok": ok})
 
             if url.path == "/api/mark-all-read":
-                n = store.mark_all_read(int(data.get("up_to_id") or 0), data.get("state") or "")
+                n = store.mark_all_read(int(data.get("up_to_id") or 0), data.get("state") or "",
+                                        min_posted(data.get("age")))
                 return self.send(200, {"ok": True, "count": n})
 
             self.send(404, {"error": "not found"})

@@ -46,6 +46,7 @@ The terminal prints one line per request, too:
 
 - **Unread / All / Starred / Hidden** tabs. The tab title shows the unread count.
 - Opening a post marks it read. Each post has buttons to star, mark read or unread, and hide, all with Undo.
+- **Posted** filter: last 24 hours (default), 3 days, 7 days or any time. Older posts stay in the database but are hidden from view.
 - Search titles and cities (press `/` to jump to the search box), filter by state,
   and sort by "newest found" or "newest posted".
 - **Mark all read** marks everything read, or only the selected state.
@@ -90,6 +91,8 @@ Restart the bot after changing anything.
 |---|---|
 | `keywords` | Search terms, e.g. `["any work", "any job"]`. Each one is a separate search, the same as typing it into the Craigslist search bar. |
 | `post_category` | Code used in each post's link. Resumes are searched under `rrr`, but each post's address uses `res`. Default `res`, normally left alone. |
+| `posted_today_only` | `true` (default) = only search posts from today, the same as ticking **posted today** on craigslist.org (`postedToday=1`). |
+| `max_post_age_hours` | Safety net: ignore any post older than this many hours (default `24`, `0` = no limit). After a restart the bot never alerts on old posts. |
 | `areas` | `"all"`, or city hostnames such as `["orangecounty", "losangeles"]`. Hostnames are listed in `us_areas.json`. |
 | `delay_between_requests_seconds` | Random gap between requests. |
 | `long_break_every_requests` / `long_break_seconds` | How often to take a longer break, and how long it lasts. |

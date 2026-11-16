@@ -138,8 +138,8 @@ class Store:
             self.db.commit()
 
     # ------------------------------------------------------------ reading
-    def list(self, view="unread", q="", state="", sort="found", limit=50, offset=0):
-        where, args = [VIEWS.get(view, VIEWS["unread"])], []
+    def list(self, view="unread", q="", state="", sort="found", limit=50, offset=0, min_posted=0):
+        where, args = [VIEWS.get(view, VIEWS["unread"]), "posted>=?"], [min_posted]
         if q:
             where.append("(title LIKE ? OR area LIKE ? OR place LIKE ?)")
             args += [f"%{q}%"] * 3
@@ -164,14 +164,16 @@ class Store:
         with self.lock:
             return self.db.execute("SELECT COALESCE(MAX(id), 0) FROM matches").fetchone()[0]
 
-    def counts(self):
+    def counts(self, min_posted=0):
+        """Tab counts respect the dashboard's "Posted" filter (min_posted); the rest are totals."""
         with self.lock:
             q = lambda sql, a=(): self.db.execute(sql, a).fetchone()[0]
+            v = lambda name: q(f"SELECT COUNT(*) FROM matches WHERE {VIEWS[name]} AND posted>=?", (min_posted,))
             return {
-                "unread": q("SELECT COUNT(*) FROM matches WHERE " + VIEWS["unread"]),
-                "all": q("SELECT COUNT(*) FROM matches WHERE " + VIEWS["all"]),
-                "starred": q("SELECT COUNT(*) FROM matches WHERE " + VIEWS["starred"]),
-                "hidden": q("SELECT COUNT(*) FROM matches WHERE " + VIEWS["hidden"]),
+                "unread": v("unread"),
+                "all": v("all"),
+                "starred": v("starred"),
+                "hidden": v("hidden"),
                 "new_today": q("SELECT COUNT(*) FROM matches WHERE alert=1 AND found>=?", (local_midnight(),)),
                 "reposts": q("SELECT COUNT(*) FROM matches WHERE repost_of IS NOT NULL"),
             }
@@ -216,9 +218,9 @@ class Store:
             self.db.commit()
             return cur.rowcount == 1
 
-    def mark_all_read(self, up_to_id, state=""):
-        sql = "UPDATE matches SET is_read=1, read_at=? WHERE is_read=0 AND hidden=0 AND id<=?"
-        args = [int(time.time()), up_to_id]
+    def mark_all_read(self, up_to_id, state="", min_posted=0):
+        sql = "UPDATE matches SET is_read=1, read_at=? WHERE is_read=0 AND hidden=0 AND id<=? AND posted>=?"
+        args = [int(time.time()), up_to_id, min_posted]
         if state:
             sql += " AND state=?"
             args.append(state)

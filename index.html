@@ -262,6 +262,12 @@
           <input id="q" type="search" placeholder="Search titles, cities…" aria-label="Search">
           <kbd>/</kbd>
         </label>
+        <select id="ageSel" aria-label="Posted">
+          <option value="24">Posted: last 24 h</option>
+          <option value="72">Posted: last 3 days</option>
+          <option value="168">Posted: last 7 days</option>
+          <option value="0">Posted: any time</option>
+        </select>
         <select id="stateSel" aria-label="State"><option value="">All states</option></select>
         <select id="sortSel" aria-label="Sort">
           <option value="found">Newest found</option>
@@ -313,7 +319,7 @@ const store = {
   set(k, v) { try { localStorage.setItem("rr." + k, JSON.stringify(v)); } catch (e) {} },
 };
 
-let view = store.get("view", "unread"), sort = store.get("sort", "found");
+let view = store.get("view", "unread"), sort = store.get("sort", "found"), age = String(store.get("age", "24"));
 let q = "", stateFilter = "";
 let items = [], total = 0, lastAlertId = null, maxId = 0, clockSkew = 0, lastState = null;
 let soundOn = store.get("sound", false), audioCtx = null;
@@ -422,13 +428,15 @@ function renderList() {
       starred: ["Nothing starred", "Star a post to keep it here."],
       hidden: ["Nothing hidden", "Hidden posts are moved here."],
     };
-    const [a, b] = filtered ? ["No matches for this filter", "Try a different search or state."] : msgs[view];
+    const [a, b] = filtered ? ["No matches for this filter", "Try a different search or state."]
+      : age !== "0" && view !== "unread" ? [msgs[view][0], msgs[view][1] + " Showing posts from the selected time range only (see the Posted filter)."]
+      : msgs[view];
     empty.replaceChildren(el("b", { text: a }), b);
   }
 }
 
 async function loadList(append = false) {
-  const params = new URLSearchParams({ view, sort, q, state: stateFilter, limit: PAGE, offset: append ? items.length : 0 });
+  const params = new URLSearchParams({ view, sort, q, state: stateFilter, age, limit: PAGE, offset: append ? items.length : 0 });
   const r = await api("/api/matches?" + params);
   items = append ? items.concat(r.items) : r.items;
   total = r.total;
@@ -585,7 +593,7 @@ function tick() {
 
 async function refreshState() {
   let s;
-  try { s = await api("/api/state?after=" + (lastAlertId ?? 0)); lastPollOk = Date.now() / 1000; }
+  try { s = await api(`/api/state?after=${lastAlertId ?? 0}&age=${age}`); lastPollOk = Date.now() / 1000; }
   catch (e) {
     if (lastState) return tick();  // tick() shows "Bot is not responding" once polls have failed for a while
     $("dot").className = $("lDot").className = "dot bad";
@@ -660,14 +668,15 @@ document.querySelectorAll(".tab").forEach(t => t.onclick = () => {
 let qTimer;
 $("q").oninput = (e) => { clearTimeout(qTimer); qTimer = setTimeout(() => { q = e.target.value.trim(); loadList(); }, 250); };
 $("stateSel").onchange = (e) => { stateFilter = e.target.value; loadList(); };
+$("ageSel").onchange = (e) => { age = e.target.value; store.set("age", age); loadList(); refreshState(); };
 $("sortSel").onchange = (e) => { sort = e.target.value; store.set("sort", sort); loadList(); };
 $("moreBtn").onclick = () => loadList(true);
 $("markAll").onclick = async () => {
   const n = lastState ? lastState.counts.unread : 0;
   if (!n) return toast("Nothing unread");
-  const scope = stateFilter ? ` in ${stateFilter}` : "";
+  const scope = (stateFilter ? ` in ${stateFilter}` : "") + (age !== "0" ? ` (${$("ageSel").selectedOptions[0].textContent.replace("Posted: ", "posted ")})` : "");
   if (!confirm(`Mark all unread posts${scope} as read?`)) return;
-  const r = await api("/api/mark-all-read", { up_to_id: maxId, state: stateFilter });
+  const r = await api("/api/mark-all-read", { up_to_id: maxId, state: stateFilter, age });
   toast(`Marked ${fmtN(r.count)} as read`);
   loadList(); refreshState();
 };
@@ -679,6 +688,7 @@ document.addEventListener("keydown", (e) => {
 /* ---------------- start ---------------- */
 document.querySelectorAll(".tab").forEach(x => x.classList.toggle("on", x.dataset.view === view));
 $("sortSel").value = sort;
+$("ageSel").value = age;
 renderNotifBtn(); renderSoundBtn();
 refreshState().then(() => loadList());
 setInterval(refreshState, POLL_MS);

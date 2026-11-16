@@ -91,8 +91,13 @@ class Scanner:
                 first_scan = not self.store.was_scanned(key)
                 t0 = time.time()
                 try:
-                    payload = craigslist.fetch(area, kw, cfg["category"], cfg["user_agent"])
+                    payload = craigslist.fetch(area, kw, cfg["category"], cfg["user_agent"],
+                                               posted_today=cfg["posted_today_only"])
                     posts = craigslist.parse(payload, area, kw, cfg["post_category"])
+                    if cfg["max_post_age_hours"]:
+                        # Safety net: never save/alert posts older than this, even after a long restart gap.
+                        cutoff = time.time() - cfg["max_post_age_hours"] * 3600
+                        posts = [p for p in posts if p["posted"] >= cutoff]
                     blocked_streak = 0
                 except craigslist.Blocked as e:
                     blocked_streak += 1

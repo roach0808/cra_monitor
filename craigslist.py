@@ -19,7 +19,7 @@ class Blocked(Exception):
         self.code = code
 
 
-def fetch(area, keyword, category, user_agent, timeout=30):
+def fetch(area, keyword, category, user_agent, posted_today=False, timeout=30):
     params = {
         "batch": f"{area['id']}-0-360-0-0",
         "cc": "US",
@@ -27,6 +27,8 @@ def fetch(area, keyword, category, user_agent, timeout=30):
         "searchPath": category,
         "query": keyword,
     }
+    if posted_today:
+        params["postedToday"] = 1  # same as ticking "posted today" on craigslist.org
     req = urllib.request.Request(
         SEARCH_API + "?" + urllib.parse.urlencode(params),
         headers={"User-Agent": user_agent, "Accept": "application/json"},
