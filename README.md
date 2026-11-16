@@ -28,6 +28,22 @@ The friend signs in once, and their Chrome remembers it.
 
 ## Dashboard
 
+**Live scan panel**: shows that the bot is working and what it's doing right now.
+- What it's doing now: checking a city (e.g. *Checking dallas / fort worth (TX)*),
+  waiting before the next city, on a short break, waiting for the next round, or paused after a block.
+- The round number, cities checked so far (e.g. `57 / 413`), when the round started, and the estimated time left.
+- The last request (city, number of results, number of new posts) and a countdown to the next one.
+- "Running for …" and "Last request … ago". If the bot stops answering, the panel turns red
+  and says **Bot is not responding**.
+- A feed of the last 25 requests, with time, city, results, new posts, how long the request took, and OK, Error or Blocked.
+
+The terminal prints one line per request, too:
+```
+12:28:28 [round 1 · 6/413] chicago: 40 result(s), 0 new (0.61s)
+```
+
+**Matches**
+
 - **Unread / All / Starred / Hidden** tabs. The tab title shows the unread count.
 - Opening a post marks it read. Each post has buttons to star, mark read or unread, and hide, all with Undo.
 - Search titles and cities (press `/` to jump to the search box), filter by state,

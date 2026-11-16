@@ -82,7 +82,8 @@ def make_handler(cfg, store, scanner, page_path):
                 after = int(q.get("after") or 0)
                 return self.send(200, {
                     "status": scanner.status,
-                    "now": int(time.time()),
+                    "activity": list(reversed(scanner.activity))[:25],
+                    "now": time.time(),
                     "keywords": cfg["keywords"],
                     "cities": len(scanner.areas),
                     "counts": store.counts(),

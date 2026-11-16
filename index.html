@@ -118,6 +118,51 @@
   th:not(:first-child), td:not(:first-child) { text-align:right; }
   .err { color:var(--bad); font-size:12.5px; margin-top:8px; word-break:break-word; }
 
+  /* ---------- live scan panel ---------- */
+  .live { margin-bottom:18px; overflow:hidden; }
+  .live-head { display:flex; align-items:center; gap:14px; padding:15px 16px 12px; flex-wrap:wrap; }
+  .live-head .dot { width:12px; height:12px; }
+  .live-title { font-size:17px; font-weight:700; letter-spacing:-.01em; }
+  .live-sub { color:var(--muted); font-size:13.5px; }
+  .beat { margin-left:auto; text-align:right; font-size:13px; color:var(--muted); }
+  .beat b { color:var(--text); font-variant-numeric:tabular-nums; }
+  .beat.stale b { color:var(--bad); }
+  .live-bar { height:6px; background:var(--card2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .live-bar i { display:block; height:100%; width:0; background:var(--accent); transition:width .6s ease; }
+  .live-grid { display:grid; grid-template-columns:repeat(6, minmax(0,1fr)); border-bottom:1px solid var(--line); }
+  .cell { padding:11px 16px; border-right:1px solid var(--line); min-width:0; }
+  .cell:last-child { border-right:0; }
+  .cell .k { font-size:12px; color:var(--muted); }
+  .cell .v { font-weight:650; font-size:15px; font-variant-numeric:tabular-nums; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .cell .s { font-size:12px; color:var(--faint); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .pacing { padding:9px 16px; font-size:12.5px; color:var(--muted); border-bottom:1px solid var(--line); background:var(--card2); }
+  .pacing b { color:var(--text); font-weight:600; }
+  .feed-wrap { max-height:300px; overflow:auto; }
+  .feed { font-size:13px; }
+  .feed th { position:sticky; top:0; background:var(--card); padding:8px 10px; border-bottom:1px solid var(--line); text-align:left !important; }
+  .feed td { padding:6px 10px; text-align:left !important; white-space:nowrap; }
+  .feed td.city { white-space:normal; min-width:140px; }
+  .feed tr.newrow td { background:var(--accent-soft); }
+  .st { font-weight:600; font-size:12px; }
+  .st.ok { color:var(--ok); } .st.error, .st.blocked { color:var(--bad); }
+  .feed .msg { color:var(--faint); font-size:12px; white-space:normal; }
+  @media (max-width: 980px) {
+    .live-grid { grid-template-columns:repeat(3, minmax(0,1fr)); }
+    .cell:nth-child(3) { border-right:0; }
+    .cell:nth-child(-n+3) { border-bottom:1px solid var(--line); }
+  }
+  @media (max-width: 640px) {
+    .live-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
+    .cell:nth-child(3) { border-right:1px solid var(--line); }
+    .cell:nth-child(2n) { border-right:0; }
+    .cell:nth-child(-n+4) { border-bottom:1px solid var(--line); }
+    .beat { margin-left:0; text-align:left; width:100%; }
+    .feed .hide-sm { display:none; }
+    .feed th, .feed td { padding:6px 6px; }
+    .feed td.city { min-width:0; }
+    .feed .ampm { display:none; }
+  }
+
   /* ---------- toast ---------- */
   .toast { position:fixed; left:50%; bottom:22px; transform:translateX(-50%) translateY(20px); opacity:0; pointer-events:none;
            background:var(--text); color:var(--bg); padding:9px 14px; border-radius:10px; font-size:13.5px; display:flex; gap:14px;
@@ -174,6 +219,33 @@
     <div class="stat"><div class="k">New today</div><div class="v" id="sToday">–</div><div class="s" id="sTodaySub">&nbsp;</div></div>
     <div class="stat"><div class="k">All matches</div><div class="v" id="sAll">–</div><div class="s" id="sAllSub">&nbsp;</div></div>
     <div class="stat"><div class="k" id="sRoundK">Current round</div><div class="v" id="sRound">–</div><div class="s" id="sRoundSub">&nbsp;</div></div>
+  </section>
+
+  <section class="panel live" aria-live="polite">
+    <div class="live-head">
+      <i class="dot" id="lDot"></i>
+      <div style="min-width:0">
+        <div class="live-title" id="lTitle">Connecting to the bot…</div>
+        <div class="live-sub" id="lSub">&nbsp;</div>
+      </div>
+      <div class="beat" id="lBeat"></div>
+    </div>
+    <div class="live-bar"><i id="lBar"></i></div>
+    <div class="live-grid">
+      <div class="cell"><div class="k">Round</div><div class="v" id="gRound">–</div><div class="s" id="gRoundS">&nbsp;</div></div>
+      <div class="cell"><div class="k">Cities checked</div><div class="v" id="gDone">–</div><div class="s" id="gDoneS">&nbsp;</div></div>
+      <div class="cell"><div class="k">Round started</div><div class="v" id="gStart">–</div><div class="s" id="gStartS">&nbsp;</div></div>
+      <div class="cell"><div class="k" id="gEtaK">Time left (est.)</div><div class="v" id="gEta">–</div><div class="s" id="gEtaS">&nbsp;</div></div>
+      <div class="cell"><div class="k">Last request</div><div class="v" id="gLast">–</div><div class="s" id="gLastS">&nbsp;</div></div>
+      <div class="cell"><div class="k" id="gNextK">Next request</div><div class="v" id="gNext">–</div><div class="s" id="gNextS">&nbsp;</div></div>
+    </div>
+    <div class="pacing" id="pacing"></div>
+    <div class="feed-wrap">
+      <table class="feed">
+        <thead><tr><th>Time</th><th class="hide-sm">#</th><th>City</th><th>Results</th><th>New</th><th class="hide-sm">Took</th><th>Status</th></tr></thead>
+        <tbody id="feed"><tr><td colspan="7" style="color:var(--faint)">No requests yet</td></tr></tbody>
+      </table>
+    </div>
   </section>
 
   <div class="layout">
@@ -235,7 +307,7 @@
 
 <script>
 const $ = (id) => document.getElementById(id);
-const PAGE = 50, POLL_MS = 10000;
+const PAGE = 50, POLL_MS = 3000;
 const store = {
   get(k, d) { try { const v = localStorage.getItem("rr." + k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
   set(k, v) { try { localStorage.setItem("rr." + k, JSON.stringify(v)); } catch (e) {} },
@@ -265,7 +337,13 @@ function ago(ts) {
   return new Date(ts * 1000).toLocaleDateString();
 }
 function mmss(sec) { sec = Math.max(0, Math.round(sec)); const m = Math.floor(sec / 60); return m + ":" + String(sec % 60).padStart(2, "0"); }
-function dur(sec) { if (sec == null) return "–"; return sec < 3600 ? Math.round(sec / 60) + " min" : (sec / 3600).toFixed(1) + " h"; }
+function dur(sec) {
+  if (sec == null) return "–";
+  sec = Math.max(0, Math.round(sec));
+  if (sec < 60) return sec + " s";
+  if (sec < 3600) return Math.round(sec / 60) + " min";
+  return Math.floor(sec / 3600) + " h " + Math.round((sec % 3600) / 60) + " min";
+}
 const fmtN = (n) => Number(n || 0).toLocaleString();
 const svg = (d, fill = "none") => {
   const s = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -413,36 +491,108 @@ function renderState(s) {
   if (rows.length) $("rounds").replaceChildren(...rows.map(r => el("tr", {},
     el("td", { text: new Date(r.started * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) + (new Date(r.started * 1000).toDateString() === new Date().toDateString() ? "" : " " + new Date(r.started * 1000).toLocaleDateString(undefined, { month: "short", day: "numeric" })) }),
     el("td", { text: dur(r.finished - r.started) }), el("td", { text: r.new_posts }), el("td", { text: r.errors + r.blocked }))));
+
+  // pacing line
+  const p = st.pacing, rng = (x) => Array.isArray(x) ? `${x[0]}–${x[1]}` : x;
+  if (p) $("pacing").replaceChildren("Request pacing: ", el("b", { text: rng(p.delay) + " s" }), " random wait between cities · ",
+    el("b", { text: rng(p.break_seconds) + " s" }), ` break every ${rng(p.break_every)} requests · `,
+    el("b", { text: rng(p.round_pause_minutes) + " min" }), " pause between rounds");
+
+  // recent requests feed
+  if (s.activity.length) $("feed").replaceChildren(...s.activity.map(a => el("tr", { class: a.new ? "newrow" : "" },
+    el("td", { text: new Date(a.t * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false }) }),
+    el("td", { class: "hide-sm", text: `R${a.round} · ${a.n}/${a.total}` }),
+    el("td", { class: "city" }, a.city, a.msg ? el("div", { class: "msg", text: a.msg }) : null),
+    el("td", { text: a.status === "ok" ? a.results : "–" }),
+    el("td", { text: a.status === "ok" ? a.new : "–" }),
+    el("td", { class: "hide-sm", text: a.took.toFixed(1) + " s" }),
+    el("td", {}, el("span", { class: "st " + a.status, text: { ok: "✓ OK", error: "✕ Error", blocked: "⛔ Blocked" }[a.status] })))));
   tick();
 }
 
+function clock(ts) { return new Date(ts * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }); }
+function secsAgo(sec) { sec = Math.max(0, Math.round(sec)); return sec < 60 ? sec + "s ago" : sec < 3600 ? Math.floor(sec / 60) + " min ago" : (sec / 3600).toFixed(1) + " h ago"; }
+function setCell(id, v, sub) { $(id).textContent = v; $(id + "S").textContent = sub || " "; }
+
+let lastPollOk = 0;
 function tick() {
   const s = lastState; if (!s) return;
   const st = s.status, now = Date.now() / 1000 + clockSkew;
-  let dot = "ok", text, roundK = "Current round", roundV, roundSub;
-  if (st.state === "scanning" || st.state === "short break") {
-    text = st.state === "short break" ? `Short break · round ${st.round} · ${st.done}/${st.total}` : `Scanning ${st.area} · ${st.done}/${st.total}`;
-    if (st.state === "short break") dot = "warn";
-    roundV = st.total ? Math.floor(100 * st.done / st.total) + "%" : "–";
-    roundSub = `round ${st.round} · ${st.new_this_round} new so far`;
-  } else if (st.state === "waiting") {
-    dot = "warn"; roundK = "Next round in";
-    roundV = st.next_round_at ? mmss(st.next_round_at - now) : "–";
-    text = "Waiting for next round"; roundSub = `last round took ${dur(st.last_round_seconds)}`;
-  } else if (st.state.startsWith("paused")) {
-    dot = "bad"; roundK = "Resuming in";
-    roundV = st.resume_at ? mmss(st.resume_at - now) : "–";
-    text = "Craigslist blocked a request · pausing"; roundSub = "waits longer after each block";
-  } else { dot = ""; text = "Starting…"; roundV = "–"; roundSub = " "; }
-  $("dot").className = "dot " + dot;
-  $("pillText").textContent = text;
-  $("sRoundK").textContent = roundK; $("sRound").textContent = roundV; $("sRoundSub").textContent = roundSub;
+  const left = st.wait_until ? Math.max(0, st.wait_until - now) : null;
+  const pct = st.total ? Math.floor(100 * st.done / st.total) : 0;
+  const where = st.area ? st.area + (st.area_state ? ` (${st.area_state})` : "") : "";
+  const lr = st.last_result;
+  let dot = "ok", title, sub, pill, nextK = "Next request", nextV = "–", nextS = "";
+
+  switch (st.state) {
+    case "scanning":
+      title = "Checking " + where; sub = `Round ${st.round} · city ${st.done + 1} of ${st.total} · keyword "${st.keyword}"`;
+      pill = `Checking ${st.area} · ${st.done + 1}/${st.total}`; nextV = "now"; nextS = "request in progress";
+      break;
+    case "waiting_request":
+      title = `Waiting ${Math.ceil(left ?? 0)}s before the next city`; sub = `Round ${st.round} · ${st.done} of ${st.total} cities checked · last: ${where}`;
+      pill = `Round ${st.round} · ${st.done}/${st.total} · next city in ${Math.ceil(left ?? 0)}s`;
+      nextV = "in " + Math.ceil(left ?? 0) + "s"; nextS = "random gap between cities";
+      break;
+    case "short_break":
+      dot = "warn"; title = "Short break"; sub = `Round ${st.round} · ${st.done} of ${st.total} cities checked · resumes in ${mmss(left ?? 0)}`;
+      pill = `Short break · resumes in ${mmss(left ?? 0)}`; nextV = "in " + mmss(left ?? 0); nextS = "after the break";
+      break;
+    case "waiting_round":
+      dot = "warn"; title = `Round ${st.round} finished · next round in ${mmss(left ?? 0)}`;
+      sub = `Checked all ${st.total} cities in ${dur(st.last_round_seconds)} · ${st.new_this_round} new post(s) this round`;
+      pill = `Round ${st.round} done · next round in ${mmss(left ?? 0)}`; nextK = "Next round"; nextV = "in " + mmss(left ?? 0); nextS = "starts automatically";
+      break;
+    case "blocked":
+      dot = "bad"; title = "Craigslist blocked a request · pausing"; sub = `Resuming in ${mmss(left ?? 0)} · ${st.last_error}`;
+      pill = `Blocked · resuming in ${mmss(left ?? 0)}`; nextV = "in " + mmss(left ?? 0); nextS = "pause doubles if blocked again";
+      break;
+    default:
+      dot = ""; title = "Starting…"; sub = "Loading cities"; pill = "Starting…";
+  }
+
+  // Is the bot alive? The page polls every 3 s; if that fails or stalls, say so loudly.
+  const pollAge = Date.now() / 1000 - lastPollOk;
+  const beat = $("lBeat");
+  if (pollAge > 15) {
+    dot = "bad"; title = "Bot is not responding"; sub = "Is cl_monitor.py still running? (no answer for " + secsAgo(pollAge).replace(" ago", "") + ")";
+    pill = "Bot not responding";
+  }
+  const reqAge = st.last_request_at ? now - st.last_request_at : null;
+  const stuck = st.state === "scanning" && reqAge !== null && reqAge > 90;
+  beat.className = "beat" + (stuck || pollAge > 15 ? " stale" : "");
+  beat.replaceChildren(el("div", {}, "Running for ", el("b", { text: dur(now - st.app_started_at) })),
+    el("div", {}, "Last request ", el("b", { text: reqAge === null ? "not yet" : secsAgo(reqAge) })));
+
+  $("lDot").className = $("dot").className = "dot " + dot;
+  $("lTitle").textContent = title; $("lSub").textContent = sub; $("pillText").textContent = pill;
+  $("lBar").style.width = $("prog").style.width = (st.state === "waiting_round" ? 100 : pct) + "%";
+
+  setCell("gRound", st.round ? "#" + st.round : "–", st.round ? `${st.new_this_round} new this round` : "");
+  setCell("gDone", st.total ? `${st.done} / ${st.total}` : "–", st.total ? pct + "% done" : "");
+  setCell("gStart", st.round_started_at ? clock(st.round_started_at) : "–", st.round_started_at ? secsAgo(now - st.round_started_at) : "");
+  if (st.state === "waiting_round") { $("gEtaK").textContent = "Last round took"; setCell("gEta", dur(st.last_round_seconds), ""); }
+  else { $("gEtaK").textContent = "Time left (est.)"; setCell("gEta", st.eta_seconds != null ? "~" + dur(st.eta_seconds) : "–", st.eta_seconds != null ? "done ≈ " + clock(now + st.eta_seconds) : "estimating…"); }
+  setCell("gLast", lr ? lr.city : "–", lr ? (lr.status === "ok" ? `${lr.results} results · ${lr.new} new · ${secsAgo(now - lr.t)}` : `${lr.status} · ${secsAgo(now - lr.t)}`) : "");
+  $("gNextK").textContent = nextK; setCell("gNext", nextV, nextS);
+
+  // stat card
+  const roundCard = st.state === "waiting_round" ? ["Next round in", mmss(left ?? 0), `last round took ${dur(st.last_round_seconds)}`]
+    : st.state === "blocked" ? ["Resuming in", mmss(left ?? 0), "blocked by Craigslist"]
+    : ["Current round", st.total ? pct + "%" : "–", st.round ? `round ${st.round} · ${st.done}/${st.total} cities` : " "];
+  [$("sRoundK").textContent, $("sRound").textContent, $("sRoundSub").textContent] = roundCard;
 }
 
 async function refreshState() {
   let s;
-  try { s = await api("/api/state?after=" + (lastAlertId ?? 0)); }
-  catch (e) { $("dot").className = "dot bad"; $("pillText").textContent = "Can't reach the bot. Is cl_monitor.py running?"; return; }
+  try { s = await api("/api/state?after=" + (lastAlertId ?? 0)); lastPollOk = Date.now() / 1000; }
+  catch (e) {
+    if (lastState) return tick();  // tick() shows "Bot is not responding" once polls have failed for a while
+    $("dot").className = $("lDot").className = "dot bad";
+    $("pillText").textContent = $("lTitle").textContent = "Can't reach the bot";
+    $("lSub").textContent = "Start it with: python cl_monitor.py";
+    return;
+  }
   const first = lastAlertId === null;
   if (!first && s.alerts.length) {
     alertUser(s.alerts.filter(a => a.id > lastAlertId));
