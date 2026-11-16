@@ -1,0 +1,2480 @@
+[
+ {
+  "id": 51,
+  "host": "anchorage",
+  "name": "anchorage / mat-su",
+  "state": "AK"
+ },
+ {
+  "id": 677,
+  "host": "fairbanks",
+  "name": "fairbanks, AK",
+  "state": "AK"
+ },
+ {
+  "id": 678,
+  "host": "kenai",
+  "name": "kenai peninsula",
+  "state": "AK"
+ },
+ {
+  "id": 676,
+  "host": "juneau",
+  "name": "southeast alaska",
+  "state": "AK"
+ },
+ {
+  "id": 372,
+  "host": "auburn",
+  "name": "auburn, AL",
+  "state": "AL"
+ },
+ {
+  "id": 127,
+  "host": "bham",
+  "name": "birmingham, AL",
+  "state": "AL"
+ },
+ {
+  "id": 467,
+  "host": "dothan",
+  "name": "dothan, AL",
+  "state": "AL"
+ },
+ {
+  "id": 560,
+  "host": "shoals",
+  "name": "florence / muscle shoals",
+  "state": "AL"
+ },
+ {
+  "id": 559,
+  "host": "gadsden",
+  "name": "gadsden-anniston",
+  "state": "AL"
+ },
+ {
+  "id": 231,
+  "host": "huntsville",
+  "name": "huntsville / decatur",
+  "state": "AL"
+ },
+ {
+  "id": 200,
+  "host": "mobile",
+  "name": "mobile, AL",
+  "state": "AL"
+ },
+ {
+  "id": 207,
+  "host": "montgomery",
+  "name": "montgomery, AL",
+  "state": "AL"
+ },
+ {
+  "id": 371,
+  "host": "tuscaloosa",
+  "name": "tuscaloosa",
+  "state": "AL"
+ },
+ {
+  "id": 293,
+  "host": "fayar",
+  "name": "fayetteville, AR",
+  "state": "AR"
+ },
+ {
+  "id": 358,
+  "host": "fortsmith",
+  "name": "fort smith, AR",
+  "state": "AR"
+ },
+ {
+  "id": 425,
+  "host": "jonesboro",
+  "name": "jonesboro, AR",
+  "state": "AR"
+ },
+ {
+  "id": 100,
+  "host": "littlerock",
+  "name": "little rock",
+  "state": "AR"
+ },
+ {
+  "id": 359,
+  "host": "texarkana",
+  "name": "texarkana",
+  "state": "AR"
+ },
+ {
+  "id": 244,
+  "host": "flagstaff",
+  "name": "flagstaff / sedona",
+  "state": "AZ"
+ },
+ {
+  "id": 565,
+  "host": "mohave",
+  "name": "mohave county",
+  "state": "AZ"
+ },
+ {
+  "id": 18,
+  "host": "phoenix",
+  "name": "phoenix, AZ",
+  "state": "AZ"
+ },
+ {
+  "id": 419,
+  "host": "prescott",
+  "name": "prescott, AZ",
+  "state": "AZ"
+ },
+ {
+  "id": 651,
+  "host": "showlow",
+  "name": "show low, AZ",
+  "state": "AZ"
+ },
+ {
+  "id": 468,
+  "host": "sierravista",
+  "name": "sierra vista, AZ",
+  "state": "AZ"
+ },
+ {
+  "id": 57,
+  "host": "tucson",
+  "name": "tucson, AZ",
+  "state": "AZ"
+ },
+ {
+  "id": 370,
+  "host": "yuma",
+  "name": "yuma, AZ",
+  "state": "AZ"
+ },
+ {
+  "id": 1,
+  "host": "sfbay",
+  "name": "SF bay area",
+  "state": "CA"
+ },
+ {
+  "id": 63,
+  "host": "bakersfield",
+  "name": "bakersfield, CA",
+  "state": "CA"
+ },
+ {
+  "id": 187,
+  "host": "chico",
+  "name": "chico, CA",
+  "state": "CA"
+ },
+ {
+  "id": 43,
+  "host": "fresno",
+  "name": "fresno / madera",
+  "state": "CA"
+ },
+ {
+  "id": 373,
+  "host": "goldcountry",
+  "name": "gold country",
+  "state": "CA"
+ },
+ {
+  "id": 709,
+  "host": "hanford",
+  "name": "hanford-corcoran",
+  "state": "CA"
+ },
+ {
+  "id": 189,
+  "host": "humboldt",
+  "name": "humboldt county",
+  "state": "CA"
+ },
+ {
+  "id": 455,
+  "host": "imperial",
+  "name": "imperial county",
+  "state": "CA"
+ },
+ {
+  "id": 104,
+  "host": "inlandempire",
+  "name": "inland empire, CA",
+  "state": "CA"
+ },
+ {
+  "id": 7,
+  "host": "losangeles",
+  "name": "los angeles",
+  "state": "CA"
+ },
+ {
+  "id": 454,
+  "host": "mendocino",
+  "name": "mendocino county",
+  "state": "CA"
+ },
+ {
+  "id": 285,
+  "host": "merced",
+  "name": "merced, CA",
+  "state": "CA"
+ },
+ {
+  "id": 96,
+  "host": "modesto",
+  "name": "modesto, CA",
+  "state": "CA"
+ },
+ {
+  "id": 102,
+  "host": "monterey",
+  "name": "monterey bay",
+  "state": "CA"
+ },
+ {
+  "id": 103,
+  "host": "orangecounty",
+  "name": "orange county, CA",
+  "state": "CA"
+ },
+ {
+  "id": 209,
+  "host": "palmsprings",
+  "name": "palm springs, CA",
+  "state": "CA"
+ },
+ {
+  "id": 188,
+  "host": "redding",
+  "name": "redding, CA",
+  "state": "CA"
+ },
+ {
+  "id": 12,
+  "host": "sacramento",
+  "name": "sacramento",
+  "state": "CA"
+ },
+ {
+  "id": 8,
+  "host": "sandiego",
+  "name": "san diego",
+  "state": "CA"
+ },
+ {
+  "id": 191,
+  "host": "slo",
+  "name": "san luis obispo",
+  "state": "CA"
+ },
+ {
+  "id": 62,
+  "host": "santabarbara",
+  "name": "santa barbara",
+  "state": "CA"
+ },
+ {
+  "id": 710,
+  "host": "santamaria",
+  "name": "santa maria, CA",
+  "state": "CA"
+ },
+ {
+  "id": 708,
+  "host": "siskiyou",
+  "name": "siskiyou county",
+  "state": "CA"
+ },
+ {
+  "id": 97,
+  "host": "stockton",
+  "name": "stockton, CA",
+  "state": "CA"
+ },
+ {
+  "id": 707,
+  "host": "susanville",
+  "name": "susanville, CA",
+  "state": "CA"
+ },
+ {
+  "id": 208,
+  "host": "ventura",
+  "name": "ventura county",
+  "state": "CA"
+ },
+ {
+  "id": 346,
+  "host": "visalia",
+  "name": "visalia-tulare",
+  "state": "CA"
+ },
+ {
+  "id": 456,
+  "host": "yubasutter",
+  "name": "yuba-sutter, CA",
+  "state": "CA"
+ },
+ {
+  "id": 319,
+  "host": "boulder",
+  "name": "boulder, CO",
+  "state": "CO"
+ },
+ {
+  "id": 210,
+  "host": "cosprings",
+  "name": "colorado springs",
+  "state": "CO"
+ },
+ {
+  "id": 13,
+  "host": "denver",
+  "name": "denver, CO",
+  "state": "CO"
+ },
+ {
+  "id": 713,
+  "host": "eastco",
+  "name": "eastern CO",
+  "state": "CO"
+ },
+ {
+  "id": 287,
+  "host": "fortcollins",
+  "name": "fort collins / north CO",
+  "state": "CO"
+ },
+ {
+  "id": 288,
+  "host": "rockies",
+  "name": "high rockies",
+  "state": "CO"
+ },
+ {
+  "id": 315,
+  "host": "pueblo",
+  "name": "pueblo, CO",
+  "state": "CO"
+ },
+ {
+  "id": 320,
+  "host": "westslope",
+  "name": "western slope",
+  "state": "CO"
+ },
+ {
+  "id": 281,
+  "host": "newlondon",
+  "name": "eastern CT",
+  "state": "CT"
+ },
+ {
+  "id": 44,
+  "host": "hartford",
+  "name": "hartford, CT",
+  "state": "CT"
+ },
+ {
+  "id": 168,
+  "host": "newhaven",
+  "name": "new haven, CT",
+  "state": "CT"
+ },
+ {
+  "id": 354,
+  "host": "nwct",
+  "name": "northwest CT",
+  "state": "CT"
+ },
+ {
+  "id": 10,
+  "host": "washingtondc",
+  "name": "washington, DC",
+  "state": "DC"
+ },
+ {
+  "id": 193,
+  "host": "delaware",
+  "name": "delaware",
+  "state": "DE"
+ },
+ {
+  "id": 238,
+  "host": "daytona",
+  "name": "daytona beach",
+  "state": "FL"
+ },
+ {
+  "id": 330,
+  "host": "keys",
+  "name": "florida keys",
+  "state": "FL"
+ },
+ {
+  "id": 125,
+  "host": "fortmyers",
+  "name": "ft myers / SW florida",
+  "state": "FL"
+ },
+ {
+  "id": 219,
+  "host": "gainesville",
+  "name": "gainesville, FL",
+  "state": "FL"
+ },
+ {
+  "id": 639,
+  "host": "cfl",
+  "name": "heartland florida",
+  "state": "FL"
+ },
+ {
+  "id": 80,
+  "host": "jacksonville",
+  "name": "jacksonville, FL",
+  "state": "FL"
+ },
+ {
+  "id": 376,
+  "host": "lakeland",
+  "name": "lakeland, FL",
+  "state": "FL"
+ },
+ {
+  "id": 638,
+  "host": "lakecity",
+  "name": "north central FL",
+  "state": "FL"
+ },
+ {
+  "id": 333,
+  "host": "ocala",
+  "name": "ocala, FL",
+  "state": "FL"
+ },
+ {
+  "id": 640,
+  "host": "okaloosa",
+  "name": "okaloosa / walton",
+  "state": "FL"
+ },
+ {
+  "id": 39,
+  "host": "orlando",
+  "name": "orlando, FL",
+  "state": "FL"
+ },
+ {
+  "id": 562,
+  "host": "panamacity",
+  "name": "panama city, FL",
+  "state": "FL"
+ },
+ {
+  "id": 203,
+  "host": "pensacola",
+  "name": "pensacola, FL",
+  "state": "FL"
+ },
+ {
+  "id": 237,
+  "host": "sarasota",
+  "name": "sarasota-bradenton",
+  "state": "FL"
+ },
+ {
+  "id": 20,
+  "host": "miami",
+  "name": "south florida",
+  "state": "FL"
+ },
+ {
+  "id": 331,
+  "host": "spacecoast",
+  "name": "space coast, FL",
+  "state": "FL"
+ },
+ {
+  "id": 557,
+  "host": "staugustine",
+  "name": "st augustine, FL",
+  "state": "FL"
+ },
+ {
+  "id": 186,
+  "host": "tallahassee",
+  "name": "tallahassee",
+  "state": "FL"
+ },
+ {
+  "id": 37,
+  "host": "tampa",
+  "name": "tampa bay area",
+  "state": "FL"
+ },
+ {
+  "id": 332,
+  "host": "treasure",
+  "name": "treasure coast, FL",
+  "state": "FL"
+ },
+ {
+  "id": 637,
+  "host": "albanyga",
+  "name": "albany, GA",
+  "state": "GA"
+ },
+ {
+  "id": 258,
+  "host": "athensga",
+  "name": "athens, GA",
+  "state": "GA"
+ },
+ {
+  "id": 14,
+  "host": "atlanta",
+  "name": "atlanta, GA",
+  "state": "GA"
+ },
+ {
+  "id": 256,
+  "host": "augusta",
+  "name": "augusta, GA",
+  "state": "GA"
+ },
+ {
+  "id": 570,
+  "host": "brunswick",
+  "name": "brunswick, GA",
+  "state": "GA"
+ },
+ {
+  "id": 343,
+  "host": "columbusga",
+  "name": "columbus, GA",
+  "state": "GA"
+ },
+ {
+  "id": 257,
+  "host": "macon",
+  "name": "macon / warner robins",
+  "state": "GA"
+ },
+ {
+  "id": 636,
+  "host": "nwga",
+  "name": "northwest GA",
+  "state": "GA"
+ },
+ {
+  "id": 205,
+  "host": "savannah",
+  "name": "savannah / hinesville",
+  "state": "GA"
+ },
+ {
+  "id": 635,
+  "host": "statesboro",
+  "name": "statesboro, GA",
+  "state": "GA"
+ },
+ {
+  "id": 427,
+  "host": "valdosta",
+  "name": "valdosta, GA",
+  "state": "GA"
+ },
+ {
+  "id": 28,
+  "host": "honolulu",
+  "name": "hawaii",
+  "state": "HI"
+ },
+ {
+  "id": 445,
+  "host": "ames",
+  "name": "ames, IA",
+  "state": "IA"
+ },
+ {
+  "id": 340,
+  "host": "cedarrapids",
+  "name": "cedar rapids, IA",
+  "state": "IA"
+ },
+ {
+  "id": 98,
+  "host": "desmoines",
+  "name": "des moines, IA",
+  "state": "IA"
+ },
+ {
+  "id": 362,
+  "host": "dubuque",
+  "name": "dubuque",
+  "state": "IA"
+ },
+ {
+  "id": 693,
+  "host": "fortdodge",
+  "name": "fort dodge, IA",
+  "state": "IA"
+ },
+ {
+  "id": 339,
+  "host": "iowacity",
+  "name": "iowa city, IA",
+  "state": "IA"
+ },
+ {
+  "id": 692,
+  "host": "masoncity",
+  "name": "mason city, IA",
+  "state": "IA"
+ },
+ {
+  "id": 307,
+  "host": "quadcities",
+  "name": "quad cities, IA/IL",
+  "state": "IA"
+ },
+ {
+  "id": 341,
+  "host": "siouxcity",
+  "name": "sioux city, IA",
+  "state": "IA"
+ },
+ {
+  "id": 691,
+  "host": "ottumwa",
+  "name": "southeast IA",
+  "state": "IA"
+ },
+ {
+  "id": 567,
+  "host": "waterloo",
+  "name": "waterloo / cedar falls",
+  "state": "IA"
+ },
+ {
+  "id": 52,
+  "host": "boise",
+  "name": "boise, ID",
+  "state": "ID"
+ },
+ {
+  "id": 424,
+  "host": "eastidaho",
+  "name": "east idaho",
+  "state": "ID"
+ },
+ {
+  "id": 654,
+  "host": "lewiston",
+  "name": "lewiston / clarkston",
+  "state": "ID"
+ },
+ {
+  "id": 469,
+  "host": "twinfalls",
+  "name": "twin falls, ID",
+  "state": "ID"
+ },
+ {
+  "id": 344,
+  "host": "bn",
+  "name": "bloomington-normal",
+  "state": "IL"
+ },
+ {
+  "id": 190,
+  "host": "chambana",
+  "name": "champaign urbana",
+  "state": "IL"
+ },
+ {
+  "id": 11,
+  "host": "chicago",
+  "name": "chicago",
+  "state": "IL"
+ },
+ {
+  "id": 569,
+  "host": "decatur",
+  "name": "decatur, IL",
+  "state": "IL"
+ },
+ {
+  "id": 698,
+  "host": "lasalle",
+  "name": "la salle co",
+  "state": "IL"
+ },
+ {
+  "id": 699,
+  "host": "mattoon",
+  "name": "mattoon-charleston",
+  "state": "IL"
+ },
+ {
+  "id": 224,
+  "host": "peoria",
+  "name": "peoria, IL",
+  "state": "IL"
+ },
+ {
+  "id": 223,
+  "host": "rockford",
+  "name": "rockford, IL",
+  "state": "IL"
+ },
+ {
+  "id": 345,
+  "host": "carbondale",
+  "name": "southern illinois",
+  "state": "IL"
+ },
+ {
+  "id": 225,
+  "host": "springfieldil",
+  "name": "springfield, IL",
+  "state": "IL"
+ },
+ {
+  "id": 697,
+  "host": "quincy",
+  "name": "western IL",
+  "state": "IL"
+ },
+ {
+  "id": 229,
+  "host": "bloomington",
+  "name": "bloomington, IN",
+  "state": "IN"
+ },
+ {
+  "id": 227,
+  "host": "evansville",
+  "name": "evansville, IN",
+  "state": "IN"
+ },
+ {
+  "id": 226,
+  "host": "fortwayne",
+  "name": "fort wayne, IN",
+  "state": "IN"
+ },
+ {
+  "id": 45,
+  "host": "indianapolis",
+  "name": "indianapolis",
+  "state": "IN"
+ },
+ {
+  "id": 672,
+  "host": "kokomo",
+  "name": "kokomo, IN",
+  "state": "IN"
+ },
+ {
+  "id": 360,
+  "host": "tippecanoe",
+  "name": "lafayette / west lafayette",
+  "state": "IN"
+ },
+ {
+  "id": 361,
+  "host": "muncie",
+  "name": "muncie / anderson",
+  "state": "IN"
+ },
+ {
+  "id": 671,
+  "host": "richmondin",
+  "name": "richmond, IN",
+  "state": "IN"
+ },
+ {
+  "id": 228,
+  "host": "southbend",
+  "name": "south bend / michiana",
+  "state": "IN"
+ },
+ {
+  "id": 348,
+  "host": "terrehaute",
+  "name": "terre haute, IN",
+  "state": "IN"
+ },
+ {
+  "id": 347,
+  "host": "lawrence",
+  "name": "lawrence, KS",
+  "state": "KS"
+ },
+ {
+  "id": 428,
+  "host": "ksu",
+  "name": "manhattan, KS",
+  "state": "KS"
+ },
+ {
+  "id": 688,
+  "host": "nwks",
+  "name": "northwest KS",
+  "state": "KS"
+ },
+ {
+  "id": 690,
+  "host": "salina",
+  "name": "salina, KS",
+  "state": "KS"
+ },
+ {
+  "id": 689,
+  "host": "seks",
+  "name": "southeast KS",
+  "state": "KS"
+ },
+ {
+  "id": 687,
+  "host": "swks",
+  "name": "southwest KS",
+  "state": "KS"
+ },
+ {
+  "id": 280,
+  "host": "topeka",
+  "name": "topeka, KS",
+  "state": "KS"
+ },
+ {
+  "id": 99,
+  "host": "wichita",
+  "name": "wichita, KS",
+  "state": "KS"
+ },
+ {
+  "id": 342,
+  "host": "bgky",
+  "name": "bowling green, KY",
+  "state": "KY"
+ },
+ {
+  "id": 674,
+  "host": "eastky",
+  "name": "eastern kentucky",
+  "state": "KY"
+ },
+ {
+  "id": 133,
+  "host": "lexington",
+  "name": "lexington, KY",
+  "state": "KY"
+ },
+ {
+  "id": 58,
+  "host": "louisville",
+  "name": "louisville, KY",
+  "state": "KY"
+ },
+ {
+  "id": 673,
+  "host": "owensboro",
+  "name": "owensboro, KY",
+  "state": "KY"
+ },
+ {
+  "id": 377,
+  "host": "westky",
+  "name": "western KY",
+  "state": "KY"
+ },
+ {
+  "id": 199,
+  "host": "batonrouge",
+  "name": "baton rouge",
+  "state": "LA"
+ },
+ {
+  "id": 644,
+  "host": "cenla",
+  "name": "central louisiana",
+  "state": "LA"
+ },
+ {
+  "id": 643,
+  "host": "houma",
+  "name": "houma, LA",
+  "state": "LA"
+ },
+ {
+  "id": 283,
+  "host": "lafayette",
+  "name": "lafayette, LA",
+  "state": "LA"
+ },
+ {
+  "id": 284,
+  "host": "lakecharles",
+  "name": "lake charles, LA",
+  "state": "LA"
+ },
+ {
+  "id": 563,
+  "host": "monroe",
+  "name": "monroe, LA",
+  "state": "LA"
+ },
+ {
+  "id": 31,
+  "host": "neworleans",
+  "name": "new orleans",
+  "state": "LA"
+ },
+ {
+  "id": 206,
+  "host": "shreveport",
+  "name": "shreveport, LA",
+  "state": "LA"
+ },
+ {
+  "id": 4,
+  "host": "boston",
+  "name": "boston",
+  "state": "MA"
+ },
+ {
+  "id": 239,
+  "host": "capecod",
+  "name": "cape cod / islands",
+  "state": "MA"
+ },
+ {
+  "id": 378,
+  "host": "southcoast",
+  "name": "south coast, MA",
+  "state": "MA"
+ },
+ {
+  "id": 173,
+  "host": "westernmass",
+  "name": "western massachusetts",
+  "state": "MA"
+ },
+ {
+  "id": 240,
+  "host": "worcester",
+  "name": "worcester / central MA",
+  "state": "MA"
+ },
+ {
+  "id": 460,
+  "host": "annapolis",
+  "name": "annapolis, MD",
+  "state": "MD"
+ },
+ {
+  "id": 34,
+  "host": "baltimore",
+  "name": "baltimore, MD",
+  "state": "MD"
+ },
+ {
+  "id": 328,
+  "host": "easternshore",
+  "name": "eastern shore",
+  "state": "MD"
+ },
+ {
+  "id": 633,
+  "host": "frederick",
+  "name": "frederick, MD",
+  "state": "MD"
+ },
+ {
+  "id": 556,
+  "host": "smd",
+  "name": "southern maryland",
+  "state": "MD"
+ },
+ {
+  "id": 329,
+  "host": "westmd",
+  "name": "western maryland",
+  "state": "MD"
+ },
+ {
+  "id": 169,
+  "host": "maine",
+  "name": "maine",
+  "state": "ME"
+ },
+ {
+  "id": 172,
+  "host": "annarbor",
+  "name": "ann arbor, MI",
+  "state": "MI"
+ },
+ {
+  "id": 628,
+  "host": "battlecreek",
+  "name": "battle creek, MI",
+  "state": "MI"
+ },
+ {
+  "id": 434,
+  "host": "centralmich",
+  "name": "central michigan",
+  "state": "MI"
+ },
+ {
+  "id": 22,
+  "host": "detroit",
+  "name": "detroit metro",
+  "state": "MI"
+ },
+ {
+  "id": 259,
+  "host": "flint",
+  "name": "flint, MI",
+  "state": "MI"
+ },
+ {
+  "id": 129,
+  "host": "grandrapids",
+  "name": "grand rapids, MI",
+  "state": "MI"
+ },
+ {
+  "id": 630,
+  "host": "holland",
+  "name": "holland, MI",
+  "state": "MI"
+ },
+ {
+  "id": 426,
+  "host": "jxn",
+  "name": "jackson, MI",
+  "state": "MI"
+ },
+ {
+  "id": 261,
+  "host": "kalamazoo",
+  "name": "kalamazoo, MI",
+  "state": "MI"
+ },
+ {
+  "id": 212,
+  "host": "lansing",
+  "name": "lansing, MI",
+  "state": "MI"
+ },
+ {
+  "id": 629,
+  "host": "monroemi",
+  "name": "monroe, MI",
+  "state": "MI"
+ },
+ {
+  "id": 554,
+  "host": "muskegon",
+  "name": "muskegon, MI",
+  "state": "MI"
+ },
+ {
+  "id": 309,
+  "host": "nmi",
+  "name": "northern michigan",
+  "state": "MI"
+ },
+ {
+  "id": 555,
+  "host": "porthuron",
+  "name": "port huron, MI",
+  "state": "MI"
+ },
+ {
+  "id": 260,
+  "host": "saginaw",
+  "name": "saginaw-midland-baycity",
+  "state": "MI"
+ },
+ {
+  "id": 572,
+  "host": "swmi",
+  "name": "southwest michigan",
+  "state": "MI"
+ },
+ {
+  "id": 627,
+  "host": "thumb",
+  "name": "the thumb, MI",
+  "state": "MI"
+ },
+ {
+  "id": 262,
+  "host": "up",
+  "name": "upper peninsula, MI",
+  "state": "MI"
+ },
+ {
+  "id": 663,
+  "host": "bemidji",
+  "name": "bemidji, MN",
+  "state": "MN"
+ },
+ {
+  "id": 664,
+  "host": "brainerd",
+  "name": "brainerd, MN",
+  "state": "MN"
+ },
+ {
+  "id": 255,
+  "host": "duluth",
+  "name": "duluth / superior",
+  "state": "MN"
+ },
+ {
+  "id": 421,
+  "host": "mankato",
+  "name": "mankato, MN",
+  "state": "MN"
+ },
+ {
+  "id": 19,
+  "host": "minneapolis",
+  "name": "minneapolis / st paul",
+  "state": "MN"
+ },
+ {
+  "id": 316,
+  "host": "rmn",
+  "name": "rochester, MN",
+  "state": "MN"
+ },
+ {
+  "id": 665,
+  "host": "marshall",
+  "name": "southwest MN",
+  "state": "MN"
+ },
+ {
+  "id": 369,
+  "host": "stcloud",
+  "name": "st cloud, MN",
+  "state": "MN"
+ },
+ {
+  "id": 222,
+  "host": "columbiamo",
+  "name": "columbia / jeff city",
+  "state": "MO"
+ },
+ {
+  "id": 423,
+  "host": "joplin",
+  "name": "joplin, MO",
+  "state": "MO"
+ },
+ {
+  "id": 30,
+  "host": "kansascity",
+  "name": "kansas city, MO",
+  "state": "MO"
+ },
+ {
+  "id": 696,
+  "host": "kirksville",
+  "name": "kirksville, MO",
+  "state": "MO"
+ },
+ {
+  "id": 695,
+  "host": "loz",
+  "name": "lake of the ozarks",
+  "state": "MO"
+ },
+ {
+  "id": 566,
+  "host": "semo",
+  "name": "southeast missouri",
+  "state": "MO"
+ },
+ {
+  "id": 221,
+  "host": "springfield",
+  "name": "springfield, MO",
+  "state": "MO"
+ },
+ {
+  "id": 694,
+  "host": "stjoseph",
+  "name": "st joseph",
+  "state": "MO"
+ },
+ {
+  "id": 29,
+  "host": "stlouis",
+  "name": "st louis, MO",
+  "state": "MO"
+ },
+ {
+  "id": 230,
+  "host": "gulfport",
+  "name": "gulfport / biloxi",
+  "state": "MS"
+ },
+ {
+  "id": 374,
+  "host": "hattiesburg",
+  "name": "hattiesburg, MS",
+  "state": "MS"
+ },
+ {
+  "id": 134,
+  "host": "jackson",
+  "name": "jackson, MS",
+  "state": "MS"
+ },
+ {
+  "id": 641,
+  "host": "meridian",
+  "name": "meridian, MS",
+  "state": "MS"
+ },
+ {
+  "id": 375,
+  "host": "northmiss",
+  "name": "north mississippi",
+  "state": "MS"
+ },
+ {
+  "id": 642,
+  "host": "natchez",
+  "name": "southwest MS",
+  "state": "MS"
+ },
+ {
+  "id": 657,
+  "host": "billings",
+  "name": "billings, MT",
+  "state": "MT"
+ },
+ {
+  "id": 658,
+  "host": "bozeman",
+  "name": "bozeman, MT",
+  "state": "MT"
+ },
+ {
+  "id": 661,
+  "host": "butte",
+  "name": "butte, MT",
+  "state": "MT"
+ },
+ {
+  "id": 192,
+  "host": "montana",
+  "name": "eastern montana",
+  "state": "MT"
+ },
+ {
+  "id": 660,
+  "host": "greatfalls",
+  "name": "great falls, MT",
+  "state": "MT"
+ },
+ {
+  "id": 659,
+  "host": "helena",
+  "name": "helena, MT",
+  "state": "MT"
+ },
+ {
+  "id": 662,
+  "host": "kalispell",
+  "name": "kalispell, MT",
+  "state": "MT"
+ },
+ {
+  "id": 656,
+  "host": "missoula",
+  "name": "missoula, MT",
+  "state": "MT"
+ },
+ {
+  "id": 171,
+  "host": "asheville",
+  "name": "asheville, NC",
+  "state": "NC"
+ },
+ {
+  "id": 446,
+  "host": "boone",
+  "name": "boone, NC",
+  "state": "NC"
+ },
+ {
+  "id": 41,
+  "host": "charlotte",
+  "name": "charlotte, NC",
+  "state": "NC"
+ },
+ {
+  "id": 335,
+  "host": "eastnc",
+  "name": "eastern NC",
+  "state": "NC"
+ },
+ {
+  "id": 273,
+  "host": "fayetteville",
+  "name": "fayetteville, NC",
+  "state": "NC"
+ },
+ {
+  "id": 61,
+  "host": "greensboro",
+  "name": "greensboro, NC",
+  "state": "NC"
+ },
+ {
+  "id": 462,
+  "host": "hickory",
+  "name": "hickory / lenoir",
+  "state": "NC"
+ },
+ {
+  "id": 634,
+  "host": "onslow",
+  "name": "jacksonville, NC",
+  "state": "NC"
+ },
+ {
+  "id": 336,
+  "host": "outerbanks",
+  "name": "outer banks",
+  "state": "NC"
+ },
+ {
+  "id": 36,
+  "host": "raleigh",
+  "name": "raleigh / durham / CH",
+  "state": "NC"
+ },
+ {
+  "id": 274,
+  "host": "wilmington",
+  "name": "wilmington, NC",
+  "state": "NC"
+ },
+ {
+  "id": 272,
+  "host": "winstonsalem",
+  "name": "winston-salem, NC",
+  "state": "NC"
+ },
+ {
+  "id": 666,
+  "host": "bismarck",
+  "name": "bismarck, ND",
+  "state": "ND"
+ },
+ {
+  "id": 435,
+  "host": "fargo",
+  "name": "fargo / moorhead",
+  "state": "ND"
+ },
+ {
+  "id": 667,
+  "host": "grandforks",
+  "name": "grand forks",
+  "state": "ND"
+ },
+ {
+  "id": 196,
+  "host": "nd",
+  "name": "north dakota",
+  "state": "ND"
+ },
+ {
+  "id": 432,
+  "host": "grandisland",
+  "name": "grand island, NE",
+  "state": "NE"
+ },
+ {
+  "id": 282,
+  "host": "lincoln",
+  "name": "lincoln, NE",
+  "state": "NE"
+ },
+ {
+  "id": 668,
+  "host": "northplatte",
+  "name": "north platte, NE",
+  "state": "NE"
+ },
+ {
+  "id": 55,
+  "host": "omaha",
+  "name": "omaha / council bluffs",
+  "state": "NE"
+ },
+ {
+  "id": 669,
+  "host": "scottsbluff",
+  "name": "scottsbluff / panhandle",
+  "state": "NE"
+ },
+ {
+  "id": 198,
+  "host": "nh",
+  "name": "new hampshire",
+  "state": "NH"
+ },
+ {
+  "id": 349,
+  "host": "cnj",
+  "name": "central NJ",
+  "state": "NJ"
+ },
+ {
+  "id": 561,
+  "host": "jerseyshore",
+  "name": "jersey shore",
+  "state": "NJ"
+ },
+ {
+  "id": 170,
+  "host": "newjersey",
+  "name": "north jersey",
+  "state": "NJ"
+ },
+ {
+  "id": 286,
+  "host": "southjersey",
+  "name": "south jersey",
+  "state": "NJ"
+ },
+ {
+  "id": 50,
+  "host": "albuquerque",
+  "name": "albuquerque",
+  "state": "NM"
+ },
+ {
+  "id": 653,
+  "host": "clovis",
+  "name": "clovis / portales",
+  "state": "NM"
+ },
+ {
+  "id": 568,
+  "host": "farmington",
+  "name": "farmington, NM",
+  "state": "NM"
+ },
+ {
+  "id": 334,
+  "host": "lascruces",
+  "name": "las cruces, NM",
+  "state": "NM"
+ },
+ {
+  "id": 420,
+  "host": "roswell",
+  "name": "roswell / carlsbad",
+  "state": "NM"
+ },
+ {
+  "id": 218,
+  "host": "santafe",
+  "name": "santa fe / taos",
+  "state": "NM"
+ },
+ {
+  "id": 652,
+  "host": "elko",
+  "name": "elko, NV",
+  "state": "NV"
+ },
+ {
+  "id": 26,
+  "host": "lasvegas",
+  "name": "las vegas",
+  "state": "NV"
+ },
+ {
+  "id": 92,
+  "host": "reno",
+  "name": "reno / tahoe",
+  "state": "NV"
+ },
+ {
+  "id": 59,
+  "host": "albany",
+  "name": "albany, NY",
+  "state": "NY"
+ },
+ {
+  "id": 248,
+  "host": "binghamton",
+  "name": "binghamton, NY",
+  "state": "NY"
+ },
+ {
+  "id": 40,
+  "host": "buffalo",
+  "name": "buffalo, NY",
+  "state": "NY"
+ },
+ {
+  "id": 451,
+  "host": "catskills",
+  "name": "catskills",
+  "state": "NY"
+ },
+ {
+  "id": 452,
+  "host": "chautauqua",
+  "name": "chautauqua, NY",
+  "state": "NY"
+ },
+ {
+  "id": 453,
+  "host": "elmira",
+  "name": "elmira-corning",
+  "state": "NY"
+ },
+ {
+  "id": 685,
+  "host": "fingerlakes",
+  "name": "finger lakes, NY",
+  "state": "NY"
+ },
+ {
+  "id": 686,
+  "host": "glensfalls",
+  "name": "glens falls, NY",
+  "state": "NY"
+ },
+ {
+  "id": 249,
+  "host": "hudsonvalley",
+  "name": "hudson valley, NY",
+  "state": "NY"
+ },
+ {
+  "id": 201,
+  "host": "ithaca",
+  "name": "ithaca, NY",
+  "state": "NY"
+ },
+ {
+  "id": 250,
+  "host": "longisland",
+  "name": "long island, NY",
+  "state": "NY"
+ },
+ {
+  "id": 3,
+  "host": "newyork",
+  "name": "new york city",
+  "state": "NY"
+ },
+ {
+  "id": 684,
+  "host": "oneonta",
+  "name": "oneonta, NY",
+  "state": "NY"
+ },
+ {
+  "id": 338,
+  "host": "plattsburgh",
+  "name": "plattsburgh-adirondacks",
+  "state": "NY"
+ },
+ {
+  "id": 683,
+  "host": "potsdam",
+  "name": "potsdam-canton-massena",
+  "state": "NY"
+ },
+ {
+  "id": 126,
+  "host": "rochester",
+  "name": "rochester, NY",
+  "state": "NY"
+ },
+ {
+  "id": 130,
+  "host": "syracuse",
+  "name": "syracuse, NY",
+  "state": "NY"
+ },
+ {
+  "id": 704,
+  "host": "twintiers",
+  "name": "twin tiers NY/PA",
+  "state": "NY"
+ },
+ {
+  "id": 247,
+  "host": "utica",
+  "name": "utica-rome-oneida",
+  "state": "NY"
+ },
+ {
+  "id": 337,
+  "host": "watertown",
+  "name": "watertown, NY",
+  "state": "NY"
+ },
+ {
+  "id": 251,
+  "host": "akroncanton",
+  "name": "akron / canton",
+  "state": "OH"
+ },
+ {
+  "id": 700,
+  "host": "ashtabula",
+  "name": "ashtabula, OH",
+  "state": "OH"
+ },
+ {
+  "id": 438,
+  "host": "athensohio",
+  "name": "athens, OH",
+  "state": "OH"
+ },
+ {
+  "id": 701,
+  "host": "chillicothe",
+  "name": "chillicothe, OH",
+  "state": "OH"
+ },
+ {
+  "id": 35,
+  "host": "cincinnati",
+  "name": "cincinnati, OH",
+  "state": "OH"
+ },
+ {
+  "id": 27,
+  "host": "cleveland",
+  "name": "cleveland, OH",
+  "state": "OH"
+ },
+ {
+  "id": 42,
+  "host": "columbus",
+  "name": "columbus, OH",
+  "state": "OH"
+ },
+ {
+  "id": 131,
+  "host": "dayton",
+  "name": "dayton / springfield",
+  "state": "OH"
+ },
+ {
+  "id": 437,
+  "host": "limaohio",
+  "name": "lima / findlay",
+  "state": "OH"
+ },
+ {
+  "id": 436,
+  "host": "mansfield",
+  "name": "mansfield, OH",
+  "state": "OH"
+ },
+ {
+  "id": 573,
+  "host": "sandusky",
+  "name": "sandusky, OH",
+  "state": "OH"
+ },
+ {
+  "id": 204,
+  "host": "toledo",
+  "name": "toledo, OH",
+  "state": "OH"
+ },
+ {
+  "id": 703,
+  "host": "tuscarawas",
+  "name": "tuscarawas co",
+  "state": "OH"
+ },
+ {
+  "id": 252,
+  "host": "youngstown",
+  "name": "youngstown, OH",
+  "state": "OH"
+ },
+ {
+  "id": 702,
+  "host": "zanesville",
+  "name": "zanesville / cambridge",
+  "state": "OH"
+ },
+ {
+  "id": 422,
+  "host": "lawton",
+  "name": "lawton, OK",
+  "state": "OK"
+ },
+ {
+  "id": 650,
+  "host": "enid",
+  "name": "northwest OK",
+  "state": "OK"
+ },
+ {
+  "id": 54,
+  "host": "oklahomacity",
+  "name": "oklahoma city",
+  "state": "OK"
+ },
+ {
+  "id": 433,
+  "host": "stillwater",
+  "name": "stillwater, OK",
+  "state": "OK"
+ },
+ {
+  "id": 70,
+  "host": "tulsa",
+  "name": "tulsa, OK",
+  "state": "OK"
+ },
+ {
+  "id": 233,
+  "host": "bend",
+  "name": "bend, OR",
+  "state": "OR"
+ },
+ {
+  "id": 350,
+  "host": "corvallis",
+  "name": "corvallis/albany",
+  "state": "OR"
+ },
+ {
+  "id": 322,
+  "host": "eastoregon",
+  "name": "east oregon",
+  "state": "OR"
+ },
+ {
+  "id": 94,
+  "host": "eugene",
+  "name": "eugene, OR",
+  "state": "OR"
+ },
+ {
+  "id": 675,
+  "host": "klamath",
+  "name": "klamath falls, OR",
+  "state": "OR"
+ },
+ {
+  "id": 216,
+  "host": "medford",
+  "name": "medford-ashland",
+  "state": "OR"
+ },
+ {
+  "id": 321,
+  "host": "oregoncoast",
+  "name": "oregon coast",
+  "state": "OR"
+ },
+ {
+  "id": 9,
+  "host": "portland",
+  "name": "portland, OR",
+  "state": "OR"
+ },
+ {
+  "id": 459,
+  "host": "roseburg",
+  "name": "roseburg, OR",
+  "state": "OR"
+ },
+ {
+  "id": 232,
+  "host": "salem",
+  "name": "salem, OR",
+  "state": "OR"
+ },
+ {
+  "id": 355,
+  "host": "altoona",
+  "name": "altoona-johnstown",
+  "state": "PA"
+ },
+ {
+  "id": 705,
+  "host": "chambersburg",
+  "name": "cumberland valley",
+  "state": "PA"
+ },
+ {
+  "id": 275,
+  "host": "erie",
+  "name": "erie, PA",
+  "state": "PA"
+ },
+ {
+  "id": 166,
+  "host": "harrisburg",
+  "name": "harrisburg, PA",
+  "state": "PA"
+ },
+ {
+  "id": 279,
+  "host": "lancaster",
+  "name": "lancaster, PA",
+  "state": "PA"
+ },
+ {
+  "id": 167,
+  "host": "allentown",
+  "name": "lehigh valley",
+  "state": "PA"
+ },
+ {
+  "id": 706,
+  "host": "meadville",
+  "name": "meadville, PA",
+  "state": "PA"
+ },
+ {
+  "id": 17,
+  "host": "philadelphia",
+  "name": "philadelphia",
+  "state": "PA"
+ },
+ {
+  "id": 33,
+  "host": "pittsburgh",
+  "name": "pittsburgh, PA",
+  "state": "PA"
+ },
+ {
+  "id": 356,
+  "host": "poconos",
+  "name": "poconos",
+  "state": "PA"
+ },
+ {
+  "id": 278,
+  "host": "reading",
+  "name": "reading, PA",
+  "state": "PA"
+ },
+ {
+  "id": 276,
+  "host": "scranton",
+  "name": "scranton / wilkes-barre",
+  "state": "PA"
+ },
+ {
+  "id": 277,
+  "host": "pennstate",
+  "name": "state college, PA",
+  "state": "PA"
+ },
+ {
+  "id": 463,
+  "host": "williamsport",
+  "name": "williamsport, PA",
+  "state": "PA"
+ },
+ {
+  "id": 357,
+  "host": "york",
+  "name": "york, PA",
+  "state": "PA"
+ },
+ {
+  "id": 38,
+  "host": "providence",
+  "name": "rhode island",
+  "state": "RI"
+ },
+ {
+  "id": 128,
+  "host": "charleston",
+  "name": "charleston, SC",
+  "state": "SC"
+ },
+ {
+  "id": 101,
+  "host": "columbia",
+  "name": "columbia, SC",
+  "state": "SC"
+ },
+ {
+  "id": 464,
+  "host": "florencesc",
+  "name": "florence, SC",
+  "state": "SC"
+ },
+ {
+  "id": 253,
+  "host": "greenville",
+  "name": "greenville / upstate",
+  "state": "SC"
+ },
+ {
+  "id": 353,
+  "host": "hiltonhead",
+  "name": "hilton head",
+  "state": "SC"
+ },
+ {
+  "id": 254,
+  "host": "myrtlebeach",
+  "name": "myrtle beach, SC",
+  "state": "SC"
+ },
+ {
+  "id": 682,
+  "host": "nesd",
+  "name": "northeast SD",
+  "state": "SD"
+ },
+ {
+  "id": 681,
+  "host": "csd",
+  "name": "pierre / central SD",
+  "state": "SD"
+ },
+ {
+  "id": 680,
+  "host": "rapidcity",
+  "name": "rapid city / west SD",
+  "state": "SD"
+ },
+ {
+  "id": 679,
+  "host": "siouxfalls",
+  "name": "sioux falls / SE SD",
+  "state": "SD"
+ },
+ {
+  "id": 195,
+  "host": "sd",
+  "name": "south dakota",
+  "state": "SD"
+ },
+ {
+  "id": 220,
+  "host": "chattanooga",
+  "name": "chattanooga, TN",
+  "state": "TN"
+ },
+ {
+  "id": 465,
+  "host": "clarksville",
+  "name": "clarksville, TN",
+  "state": "TN"
+ },
+ {
+  "id": 670,
+  "host": "cookeville",
+  "name": "cookeville, TN",
+  "state": "TN"
+ },
+ {
+  "id": 558,
+  "host": "jacksontn",
+  "name": "jackson, TN",
+  "state": "TN"
+ },
+ {
+  "id": 202,
+  "host": "knoxville",
+  "name": "knoxville, TN",
+  "state": "TN"
+ },
+ {
+  "id": 46,
+  "host": "memphis",
+  "name": "memphis, TN",
+  "state": "TN"
+ },
+ {
+  "id": 32,
+  "host": "nashville",
+  "name": "nashville, TN",
+  "state": "TN"
+ },
+ {
+  "id": 323,
+  "host": "tricities",
+  "name": "tri-cities, TN",
+  "state": "TN"
+ },
+ {
+  "id": 364,
+  "host": "abilene",
+  "name": "abilene, TX",
+  "state": "TX"
+ },
+ {
+  "id": 269,
+  "host": "amarillo",
+  "name": "amarillo, TX",
+  "state": "TX"
+ },
+ {
+  "id": 15,
+  "host": "austin",
+  "name": "austin, TX",
+  "state": "TX"
+ },
+ {
+  "id": 264,
+  "host": "beaumont",
+  "name": "beaumont / port arthur",
+  "state": "TX"
+ },
+ {
+  "id": 266,
+  "host": "brownsville",
+  "name": "brownsville, TX",
+  "state": "TX"
+ },
+ {
+  "id": 326,
+  "host": "collegestation",
+  "name": "college station, TX",
+  "state": "TX"
+ },
+ {
+  "id": 265,
+  "host": "corpuschristi",
+  "name": "corpus christi, TX",
+  "state": "TX"
+ },
+ {
+  "id": 21,
+  "host": "dallas",
+  "name": "dallas / fort worth",
+  "state": "TX"
+ },
+ {
+  "id": 645,
+  "host": "nacogdoches",
+  "name": "deep east texas",
+  "state": "TX"
+ },
+ {
+  "id": 647,
+  "host": "delrio",
+  "name": "del rio / eagle pass",
+  "state": "TX"
+ },
+ {
+  "id": 132,
+  "host": "elpaso",
+  "name": "el paso, TX",
+  "state": "TX"
+ },
+ {
+  "id": 470,
+  "host": "galveston",
+  "name": "galveston, TX",
+  "state": "TX"
+ },
+ {
+  "id": 23,
+  "host": "houston",
+  "name": "houston, TX",
+  "state": "TX"
+ },
+ {
+  "id": 327,
+  "host": "killeen",
+  "name": "killeen / temple / ft hood",
+  "state": "TX"
+ },
+ {
+  "id": 271,
+  "host": "laredo",
+  "name": "laredo, TX",
+  "state": "TX"
+ },
+ {
+  "id": 267,
+  "host": "lubbock",
+  "name": "lubbock, TX",
+  "state": "TX"
+ },
+ {
+  "id": 263,
+  "host": "mcallen",
+  "name": "mcallen / edinburg",
+  "state": "TX"
+ },
+ {
+  "id": 268,
+  "host": "odessa",
+  "name": "odessa / midland",
+  "state": "TX"
+ },
+ {
+  "id": 646,
+  "host": "sanangelo",
+  "name": "san angelo, TX",
+  "state": "TX"
+ },
+ {
+  "id": 53,
+  "host": "sanantonio",
+  "name": "san antonio",
+  "state": "TX"
+ },
+ {
+  "id": 449,
+  "host": "sanmarcos",
+  "name": "san marcos, TX",
+  "state": "TX"
+ },
+ {
+  "id": 648,
+  "host": "bigbend",
+  "name": "southwest TX",
+  "state": "TX"
+ },
+ {
+  "id": 649,
+  "host": "texoma",
+  "name": "texoma",
+  "state": "TX"
+ },
+ {
+  "id": 308,
+  "host": "easttexas",
+  "name": "tyler / east TX",
+  "state": "TX"
+ },
+ {
+  "id": 564,
+  "host": "victoriatx",
+  "name": "victoria, TX",
+  "state": "TX"
+ },
+ {
+  "id": 270,
+  "host": "waco",
+  "name": "waco, TX",
+  "state": "TX"
+ },
+ {
+  "id": 365,
+  "host": "wichitafalls",
+  "name": "wichita falls, TX",
+  "state": "TX"
+ },
+ {
+  "id": 448,
+  "host": "logan",
+  "name": "logan, UT",
+  "state": "UT"
+ },
+ {
+  "id": 351,
+  "host": "ogden",
+  "name": "ogden-clearfield",
+  "state": "UT"
+ },
+ {
+  "id": 292,
+  "host": "provo",
+  "name": "provo / orem",
+  "state": "UT"
+ },
+ {
+  "id": 56,
+  "host": "saltlakecity",
+  "name": "salt lake city",
+  "state": "UT"
+ },
+ {
+  "id": 352,
+  "host": "stgeorge",
+  "name": "st george, UT",
+  "state": "UT"
+ },
+ {
+  "id": 290,
+  "host": "charlottesville",
+  "name": "charlottesville, VA",
+  "state": "VA"
+ },
+ {
+  "id": 367,
+  "host": "danville",
+  "name": "danville",
+  "state": "VA"
+ },
+ {
+  "id": 457,
+  "host": "fredericksburg",
+  "name": "fredericksburg, VA",
+  "state": "VA"
+ },
+ {
+  "id": 447,
+  "host": "harrisonburg",
+  "name": "harrisonburg, VA",
+  "state": "VA"
+ },
+ {
+  "id": 366,
+  "host": "lynchburg",
+  "name": "lynchburg, VA",
+  "state": "VA"
+ },
+ {
+  "id": 291,
+  "host": "blacksburg",
+  "name": "new river valley",
+  "state": "VA"
+ },
+ {
+  "id": 48,
+  "host": "norfolk",
+  "name": "norfolk / hampton roads",
+  "state": "VA"
+ },
+ {
+  "id": 60,
+  "host": "richmond",
+  "name": "richmond, VA",
+  "state": "VA"
+ },
+ {
+  "id": 289,
+  "host": "roanoke",
+  "name": "roanoke, VA",
+  "state": "VA"
+ },
+ {
+  "id": 712,
+  "host": "swva",
+  "name": "southwest VA",
+  "state": "VA"
+ },
+ {
+  "id": 711,
+  "host": "winchester",
+  "name": "winchester, VA",
+  "state": "VA"
+ },
+ {
+  "id": 93,
+  "host": "vermont",
+  "name": "vermont",
+  "state": "VT"
+ },
+ {
+  "id": 217,
+  "host": "bellingham",
+  "name": "bellingham, WA",
+  "state": "WA"
+ },
+ {
+  "id": 324,
+  "host": "kpr",
+  "name": "kennewick-pasco-richland",
+  "state": "WA"
+ },
+ {
+  "id": 655,
+  "host": "moseslake",
+  "name": "moses lake, WA",
+  "state": "WA"
+ },
+ {
+  "id": 466,
+  "host": "olympic",
+  "name": "olympic peninsula",
+  "state": "WA"
+ },
+ {
+  "id": 368,
+  "host": "pullman",
+  "name": "pullman / moscow",
+  "state": "WA"
+ },
+ {
+  "id": 2,
+  "host": "seattle",
+  "name": "seattle-tacoma",
+  "state": "WA"
+ },
+ {
+  "id": 461,
+  "host": "skagit",
+  "name": "skagit / island / SJI",
+  "state": "WA"
+ },
+ {
+  "id": 95,
+  "host": "spokane",
+  "name": "spokane / coeur d'alene",
+  "state": "WA"
+ },
+ {
+  "id": 325,
+  "host": "wenatchee",
+  "name": "wenatchee, WA",
+  "state": "WA"
+ },
+ {
+  "id": 246,
+  "host": "yakima",
+  "name": "yakima, WA",
+  "state": "WA"
+ },
+ {
+  "id": 243,
+  "host": "appleton",
+  "name": "appleton-oshkosh-FDL",
+  "state": "WI"
+ },
+ {
+  "id": 242,
+  "host": "eauclaire",
+  "name": "eau claire, WI",
+  "state": "WI"
+ },
+ {
+  "id": 241,
+  "host": "greenbay",
+  "name": "green bay, WI",
+  "state": "WI"
+ },
+ {
+  "id": 553,
+  "host": "janesville",
+  "name": "janesville, WI",
+  "state": "WI"
+ },
+ {
+  "id": 552,
+  "host": "racine",
+  "name": "kenosha-racine",
+  "state": "WI"
+ },
+ {
+  "id": 363,
+  "host": "lacrosse",
+  "name": "la crosse, WI",
+  "state": "WI"
+ },
+ {
+  "id": 165,
+  "host": "madison",
+  "name": "madison, WI",
+  "state": "WI"
+ },
+ {
+  "id": 47,
+  "host": "milwaukee",
+  "name": "milwaukee, WI",
+  "state": "WI"
+ },
+ {
+  "id": 631,
+  "host": "northernwi",
+  "name": "northern WI",
+  "state": "WI"
+ },
+ {
+  "id": 571,
+  "host": "sheboygan",
+  "name": "sheboygan, WI",
+  "state": "WI"
+ },
+ {
+  "id": 458,
+  "host": "wausau",
+  "name": "wausau, WI",
+  "state": "WI"
+ },
+ {
+  "id": 439,
+  "host": "charlestonwv",
+  "name": "charleston, WV",
+  "state": "WV"
+ },
+ {
+  "id": 444,
+  "host": "martinsburg",
+  "name": "eastern panhandle",
+  "state": "WV"
+ },
+ {
+  "id": 442,
+  "host": "huntington",
+  "name": "huntington-ashland",
+  "state": "WV"
+ },
+ {
+  "id": 440,
+  "host": "morgantown",
+  "name": "morgantown, WV",
+  "state": "WV"
+ },
+ {
+  "id": 443,
+  "host": "wheeling",
+  "name": "northern panhandle",
+  "state": "WV"
+ },
+ {
+  "id": 441,
+  "host": "parkersburg",
+  "name": "parkersburg-marietta",
+  "state": "WV"
+ },
+ {
+  "id": 632,
+  "host": "swv",
+  "name": "southern WV",
+  "state": "WV"
+ },
+ {
+  "id": 194,
+  "host": "wv",
+  "name": "west virginia (old)",
+  "state": "WV"
+ },
+ {
+  "id": 197,
+  "host": "wyoming",
+  "name": "wyoming",
+  "state": "WY"
+ }
+]

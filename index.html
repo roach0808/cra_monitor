@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resume Alerts</title>
+<style>
+  :root { --bg:#f6f7f9; --card:#fff; --text:#1b1f24; --muted:#667085; --line:#e4e7ec; --accent:#5b2bbd; --new:#fff7d6; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#14161a; --card:#1d2026; --text:#e8eaed; --muted:#9aa1ac; --line:#2c3038; --accent:#b39bff; --new:#3a3418; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:15px/1.45 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+  main { max-width: 960px; margin: 0 auto; padding: 20px 16px 60px; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .muted { color: var(--muted); }
+  .bar { display:flex; flex-wrap:wrap; gap:12px; align-items:center; background:var(--card); border:1px solid var(--line);
+         border-radius:10px; padding:12px 14px; margin:16px 0; }
+  .bar .grow { flex: 1 1 260px; }
+  button { background:var(--accent); color:#fff; border:0; border-radius:8px; padding:8px 14px; font:inherit; cursor:pointer; }
+  button[disabled] { opacity:.5; cursor:default; }
+  progress { width: 100%; height: 8px; }
+  ul { list-style:none; margin:0; padding:0; }
+  li { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 14px; margin-bottom:8px; }
+  li.new { background:var(--new); }
+  li a { color:var(--accent); font-weight:600; text-decoration:none; word-break:break-word; }
+  li a:hover { text-decoration:underline; }
+  .meta { font-size:13px; color:var(--muted); margin-top:2px; }
+  .tag { font-size:12px; border:1px solid var(--line); border-radius:999px; padding:0 8px; margin-left:6px; }
+  .err { color:#d92d20; font-size:13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Craigslist resume alerts</h1>
+  <div class="muted" id="kw"></div>
+
+  <div class="bar">
+    <div class="grow">
+      <div id="state">Connecting…</div>
+      <progress id="prog" value="0" max="1"></progress>
+      <div class="err" id="err"></div>
+    </div>
+    <button id="enable">Enable notifications</button>
+  </div>
+
+  <ul id="list"></ul>
+  <p class="muted" id="empty">No matches yet. The first full pass over all US cities takes a while.</p>
+</main>
+
+<script>
+const POLL_MS = 10000;
+let lastId = 0, firstLoad = true, items = [];
+let lastSeen = 0;
+try { lastSeen = +localStorage.getItem("lastSeen") || 0; } catch (e) {}
+
+const btn = document.getElementById("enable");
+function refreshButton() {
+  if (!("Notification" in window)) { btn.textContent = "Notifications not supported"; btn.disabled = true; return; }
+  if (Notification.permission === "granted") { btn.textContent = "Notifications on"; btn.disabled = true; }
+  else if (Notification.permission === "denied") { btn.textContent = "Notifications blocked in Chrome settings"; btn.disabled = true; }
+}
+btn.onclick = async () => { await Notification.requestPermission(); refreshButton(); };
+refreshButton();
+
+function fmt(ts) { return new Date(ts * 1000).toLocaleString(); }
+
+function notify(m) {
+  if (!("Notification" in window) || Notification.permission !== "granted") return;
+  const n = new Notification("Resume: " + m.title, {
+    body: m.area + (m.place ? " — " + m.place : "") + "\nmatched: " + m.keyword,
+    tag: "cl-" + m.posting_id,
+  });
+  n.onclick = () => { window.open(m.url, "_blank"); n.close(); };
+}
+
+function render() {
+  const list = document.getElementById("list");
+  list.innerHTML = "";
+  for (const m of items) {
+    const li = document.createElement("li");
+    if (m.id > lastSeen && m.alert) li.className = "new";
+    const a = document.createElement("a");
+    a.href = m.url; a.target = "_blank"; a.rel = "noopener"; a.textContent = m.title || "(no title)";
+    const meta = document.createElement("div");
+    meta.className = "meta";
+    meta.textContent = m.area + (m.place ? " · " + m.place : "") + " · posted " + fmt(m.posted);
+    const tag = document.createElement("span");
+    tag.className = "tag"; tag.textContent = m.alert ? "new" : "already there at start";
+    meta.appendChild(tag);
+    li.append(a, meta);
+    list.appendChild(li);
+  }
+  document.getElementById("empty").style.display = items.length ? "none" : "";
+}
+
+async function poll() {
+  try {
+    const r = await fetch("/api/state?after=" + lastId, { cache: "no-store" });
+    const s = await r.json();
+    const st = s.status;
+    document.getElementById("kw").textContent = "Keywords: " + s.keywords.join(", ") + " · resumes section · all US cities";
+    document.getElementById("state").textContent =
+      `Round ${st.round}: ${st.state}` + (st.state === "scanning" ? ` — ${st.area} (${st.done}/${st.total})` : "") +
+      (st.last_round_seconds ? ` · last round took ${Math.round(st.last_round_seconds / 60)} min` : "");
+    const prog = document.getElementById("prog");
+    prog.max = st.total || 1; prog.value = st.done;
+    document.getElementById("err").textContent = st.last_error ? "Last error: " + st.last_error : "";
+
+    const fresh = s.matches;  // newest first
+    if (fresh.length) {
+      if (!firstLoad) {
+        const toAlert = fresh.filter(m => m.alert);
+        if (toAlert.length > 5) {
+          if (Notification.permission === "granted")
+            new Notification(toAlert.length + " new resumes found", { body: toAlert.slice(0, 3).map(m => m.title).join("\n") });
+        } else toAlert.reverse().forEach(notify);
+      }
+      lastId = Math.max(lastId, ...fresh.map(m => m.id));
+      items = fresh.concat(items).slice(0, 500);
+      render();
+    }
+    if (firstLoad) { render(); firstLoad = false; }
+  } catch (e) {
+    document.getElementById("state").textContent = "Can't reach the bot. Is cl_monitor.py running?";
+  }
+}
+
+// When you look at the page, everything shown counts as "seen" for next time.
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "hidden" && lastId) {
+    try { localStorage.setItem("lastSeen", lastId); } catch (e) {}
+  }
+});
+
+poll();
+setInterval(poll, POLL_MS);
+</script>
+</body>
+</html>

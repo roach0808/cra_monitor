@@ -1,0 +1,11 @@
+{
+  "keywords": ["any work"],
+  "category": "rrr",
+  "areas": "all",
+  "seconds_between_requests": 3,
+  "seconds_between_rounds": 300,
+  "backoff_minutes_when_blocked": 15,
+  "alert_on_first_scan": false,
+  "port": 8765,
+  "user_agent": "cl-resume-alert/1.0 (personal use)"
+}
