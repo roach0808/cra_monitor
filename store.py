@@ -60,6 +60,8 @@ class Store:
         for col, decl in ADDED_COLUMNS.items():
             if col not in have:
                 self.db.execute(f"ALTER TABLE matches ADD COLUMN {col} {decl}")
+        # Earlier versions built post links with the search code "rrr"; posts actually live under "res".
+        self.db.execute("UPDATE matches SET url=replace(url, '/rrr/d/', '/res/d/') WHERE url LIKE '%/rrr/d/%'")
         self.db.execute("CREATE INDEX IF NOT EXISTS idx_repost ON matches(area_host, title COLLATE NOCASE)")
         self.db.execute("CREATE INDEX IF NOT EXISTS idx_found ON matches(found)")
         self.db.commit()

@@ -21,7 +21,8 @@ HERE = Path(__file__).resolve().parent
 
 DEFAULTS = {
     "keywords": ["any work"],
-    "category": "rrr",
+    "category": "rrr",          # search code (resumes)
+    "post_category": "res",     # code in each post's address
     "areas": "all",
     "delay_between_requests_seconds": [3, 8],
     "long_break_every_requests": [40, 70],

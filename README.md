@@ -89,6 +89,7 @@ Restart the bot after changing anything.
 | key | meaning |
 |---|---|
 | `keywords` | Search terms, e.g. `["any work", "any job"]`. Each one is a separate search, the same as typing it into the Craigslist search bar. |
+| `post_category` | Code used in each post's link. Resumes are searched under `rrr`, but each post's address uses `res`. Default `res`, normally left alone. |
 | `areas` | `"all"`, or city hostnames such as `["orangecounty", "losangeles"]`. Hostnames are listed in `us_areas.json`. |
 | `delay_between_requests_seconds` | Random gap between requests. |
 | `long_break_every_requests` / `long_break_seconds` | How often to take a longer break, and how long it lasts. |

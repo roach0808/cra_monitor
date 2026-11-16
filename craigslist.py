@@ -40,8 +40,13 @@ def fetch(area, keyword, category, user_agent, timeout=30):
         raise
 
 
-def parse(payload, area, keyword, category):
-    """Turn the compact search response into posts with real URLs."""
+def parse(payload, area, keyword, post_category):
+    """Turn the compact search response into posts with real URLs.
+
+    post_category is the code used in a single post's address, which differs from
+    the search code: resumes are searched under "rrr" but each post lives under "res"
+    (e.g. https://philadelphia.craigslist.org/res/d/<slug>/<id>.html).
+    """
     data = payload.get("data") or {}
     dec = data.get("decode") or {}
     min_id = dec.get("minPostingId", 0)
@@ -74,7 +79,7 @@ def parse(payload, area, keyword, category):
             posts.append({
                 "id": pid,
                 "title": title.strip(),
-                "url": f"https://{host}.craigslist.org/{path}{category}/d/{slug}/{pid}.html",
+                "url": f"https://{host}.craigslist.org/{path}{post_category}/d/{slug}/{pid}.html",
                 "area": area["name"],
                 "area_host": area["host"],
                 "state": area.get("state", ""),

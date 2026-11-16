@@ -92,7 +92,7 @@ class Scanner:
                 t0 = time.time()
                 try:
                     payload = craigslist.fetch(area, kw, cfg["category"], cfg["user_agent"])
-                    posts = craigslist.parse(payload, area, kw, cfg["category"])
+                    posts = craigslist.parse(payload, area, kw, cfg["post_category"])
                     blocked_streak = 0
                 except craigslist.Blocked as e:
                     blocked_streak += 1
