@@ -1,4 +1,6 @@
 matches.db
 matches.db-journal
+matches.db-wal
+matches.db-shm
 __pycache__/
 *.pyc

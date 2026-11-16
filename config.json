@@ -2,10 +2,21 @@
   "keywords": ["any work"],
   "category": "rrr",
   "areas": "all",
-  "seconds_between_requests": 3,
-  "seconds_between_rounds": 300,
+
+  "delay_between_requests_seconds": [3, 8],
+  "long_break_every_requests": [40, 70],
+  "long_break_seconds": [30, 90],
+  "pause_between_rounds_minutes": [5, 15],
+  "shuffle_city_order": true,
   "backoff_minutes_when_blocked": 15,
+  "max_backoff_minutes": 120,
+
   "alert_on_first_scan": false,
+  "alert_on_reposts": false,
+  "repost_window_days": 30,
+
+  "host": "127.0.0.1",
   "port": 8765,
+  "password": "",
   "user_agent": "cl-resume-alert/1.0 (personal use)"
 }
